@@ -1,0 +1,41 @@
+<p style="color:green;"><%= flash[:notice] %></p>
+<p style="color:red;"><%= flash[:error] %></p>
+<hr />
+<h1>Use Resque</h1>
+<p>Step 1 : start Redis server by command line : redis-server /usr/local/etc/redis.conf</p>
+<p>Step 2 : start Resque by command line : rake resque:work QUEUE='*'</p>
+<p>Step 3 : <%= link_to 'run resque', run_resque_path %></p>
+<p>Step 4 : <%= link_to 'view : Resque task', resque_path, target: "_blank" %></p>
+
+<hr />
+
+<H1>Test send mail </H1>
+<%= form_for :mail, :url => send_mail_path do |f| %>
+  <%= f.label :email %> *<br>
+  <%= text_field_tag :email %>
+  <p><%= f.submit %></p>
+
+<% end %>
+
+<hr />
+
+<H1>Run Schedule</H1>
+<%= form_for :schedule, :url => run_schedule_path do |f| %>
+  <%= f.label :email %> *<br>
+  <%= text_field_tag :email %>
+  <p><%= f.submit %></p>
+
+<% end %>
+
+<hr />
+
+<H1>Delete Schedule</H1>
+<%= form_for :schedule, :url => del_schedule_path do |f| %>
+  <%= f.label :email %> *<br>
+  <%= text_field_tag :email %>
+  <p><%= f.submit %></p>
+
+<% end %>
+
+<%=link_to 'Start Schedule',start_schedule_path,:remote=> true%>
+||<%=link_to 'Kill Schedule',kill_schedule_path,:remote=> true%>
