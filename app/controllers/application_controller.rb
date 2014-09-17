@@ -7,5 +7,7 @@ class ApplicationController < ActionController::Base
   
   def check_abc
     print 'adbsdfsdf'
-  end  
+    puts 'check abc'
+  end 
+  
 end
