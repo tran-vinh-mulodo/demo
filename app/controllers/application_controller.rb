@@ -4,5 +4,9 @@ class ApplicationController < ActionController::Base
   def check_abc
     puts 'check abc'
   end  
+  
+  def other_method
+    puts "other method"
+  end
     
 end
