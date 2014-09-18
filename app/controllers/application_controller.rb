@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
     puts 'check abc'
   end 
   
+  def new_method
+    puts 1+1
+  end
+  
 end
